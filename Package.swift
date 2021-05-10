@@ -10,6 +10,13 @@ let package = Package(
     ],
     targets: [
         .target(name: "Iwstb", path: "Sources"),
-        .testTarget(name: "IwstbTests", dependencies: ["Iwstb"], path: "Tests")
+        .testTarget(
+            name: "IwstbTests", 
+            dependencies: ["Iwstb"], 
+            path: "Tests",
+            resources: [
+                .copy("LineReaderTestData")
+            ]
+        )
     ]
 )
