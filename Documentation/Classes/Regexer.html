@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Regexer Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Regexer" class="dashAnchor"></a>
+    <a title="Regexer Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Ish West Swift Toolbox v. 0.1.0</a> (93% documented)</p>
+        <p class="header-right"><a href="https://github.com/optimistiCli/iwstb"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Iwstb Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Regexer Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Getopter.html">Getopter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Getopter.html#/s:5Iwstb8GetopterC6ResultV">– Result</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Iwstb.html">Iwstb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Iwstb/Error.html">– Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LineReader.html">LineReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LineReader/Chomp.html">– Chomp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Regexer.html">Regexer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:SS">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/StringProtocol.html">StringProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:Ss">Substring</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Chompable.html">Chompable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/IwstbError.html">IwstbError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Regexer</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Regexer</span></code></pre>
+
+                </div>
+              </div>
+            <p>Convenience wrapper for the  <code>NSRegularExpression</code></p>
+
+<p>Please see <code>cookRegexer</code> in <code><a href="../Classes/Iwstb.html">Iwstb</a></code> for more docs.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Iwstb7RegexerC6searchySaySsGSgSSF"></a>
+                    <a name="//apple_ref/swift/Method/search(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Iwstb7RegexerC6searchySaySsGSgSSF">search(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">_</span> <span class="nv">aStr</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Substring</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>aStr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A string where this regexp will search for a match.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of substrings of the original string. First element corresponds to the the pattern
+       as a whole. Second and further substrings consist of the matches of the capturing
+       groups. If certain gorup did not match anything then the corresponding subscting
+       is empty.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://github.com/optimistiCli" target="_blank" rel="external">Ish West</a>. All rights reserved. (Last updated: 2021-05-10)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
