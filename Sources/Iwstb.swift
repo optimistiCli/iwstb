@@ -54,7 +54,7 @@ public class Iwstb {
 
      Intended use, assuming the default prog token and long help separator:
      ~~~
-     Iwstb.updateUsage(
+     Iwstb.updateUsage(with:
          """
          Usage:
            $PROG [-h] [-c] [-q] <data file>

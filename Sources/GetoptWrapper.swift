@@ -17,14 +17,14 @@ public class Getopter: Sequence, IteratorProtocol {
 
          For `-h` command line option this parameter will be `"h"`
          */
-        let option: Character
+        public let option: Character
 
         /**
          Option argument
 
          Only available if the option was declared with colon in the optstring. Otherwise it's `nil`.
          */
-        let argument: String?
+        public let argument: String?
 
         /**
          Indicates if this option was missing from the optstring.
@@ -32,7 +32,7 @@ public class Getopter: Sequence, IteratorProtocol {
          Please note that if this parameter is `true` then the `argument` parameter is guarantied
          to be `nil`.
          */
-        let missing: Bool
+        public let missing: Bool
     }
 
     private let _argc: Int32
