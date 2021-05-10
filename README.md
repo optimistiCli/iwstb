@@ -2,4 +2,4 @@
 
 A random collection of handy tools
 
-Please see [Documentation](Documentation/Classes/Iwstb.html) for details.
+Please see the documentation for the `Iwstb` class for details.
