@@ -91,7 +91,7 @@ public extension Iwstb {
 
      Please see `IwstbError` for more docs.
      */
-    class Error: IwstbError {
+    open class Error: IwstbError {
         private var _reason: String
 
         public var reason: String {
