@@ -6,7 +6,7 @@ import Foundation
  A random collection of handy tools.
  */
 public class Iwstb {
-    let version = "0.1.1"
+    let version = "0.1.2"
 
 
     // MARK: Program
