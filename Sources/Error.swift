@@ -43,9 +43,9 @@ import Foundation
     activity.unicorn = _unicornProvider.getUnicorn()
     do {
         try activity.doSmth()
-    } catch let iwstbError as IwstbError {
-        iwstbError.augment("with a unicorn from \(_unicornProvider.name)")
-        throw iwstbError
+    } catch let error as AugmentableError {
+        error.augment("with a unicorn from \(_unicornProvider.name)")
+        throw error
     }
  }
  ```
@@ -66,7 +66,7 @@ import Foundation
  exit(main())
  ```
   */
-public protocol IwstbError: Error {
+public protocol AugmentableError: Error, CustomStringConvertible {
     /**
      The message that explains why this particular error was thrown.
      */
@@ -82,42 +82,57 @@ public protocol IwstbError: Error {
 }
 
 public extension Iwstb {
-    // MARK: Errors base
-
     /**
-     Basic implementation of the `IwstbError` protocol.
-
-     Intended as super-class for domain-specific errors. But it can be used as-is too.
-
-     Please see `IwstbError` for more docs.
+     A bit of backward compatibility
      */
-    open class Error: IwstbError {
-        private var _reason: String
+    typealias Error = IwstbError
+}
 
-        public var reason: String {
-            get {
-                return _reason
-            }
-        }
+// MARK: Errors base
 
-        /**
-         Creates an error compliant with `IwstbError` setting its reason.
+/**
+ Basic implementation of the `AugmentableError` protocol.
 
-         - Parameters:
-           - aReason: A message describing the reason why this particular error was thrown.
-         */
-        public init(because aReason: String) {
-            _reason = aReason
-        }
+ Intended as super-class for domain-specific errors. But it can be used as-is too.
 
-        /**
-         Appends the error's `reason` with extra message.
+ Please see `AugmentableError` for more docs.
+ */
+open class IwstbError: AugmentableError {
+    private var _reason: String
 
-         - Parameters:
-           - aAny: Additional message text
-         */
-        public func augment(_ aAny: Any) {
-            _reason += " " + "\(aAny)".trimmingCharacters(in: .whitespacesAndNewlines)
+    public var reason: String {
+        get {
+            return _reason
         }
     }
+
+    public var description: String {
+        get {
+            return "\(Self.self): \(_reason)"
+        }
+    }
+
+    /**
+     Creates an error compliant with `AugmentableError` setting its reason.
+
+     - Parameters:
+       - aReason: A message describing the reason why this particular error was thrown.
+     */
+    public init(because aReason: String) {
+        _reason = aReason
+    }
+
+    /**
+     Appends the error's `reason` with extra message.
+
+     - Parameters:
+       - aAny: Additional message text
+     */
+    public func augment(_ aAny: Any) {
+        guard let addition = "\(aAny)".chompedBoth else {
+            return
+        }
+        _reason += " " + addition
+    }
 }
+

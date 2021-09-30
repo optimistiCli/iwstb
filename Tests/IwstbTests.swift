@@ -3,6 +3,6 @@ import XCTest
 
 class IwstbTests: XCTestCase {
     func testVersion() {
-        XCTAssertEqual(Iwstb().version, "0.1.2")
+        XCTAssertEqual(Iwstb().version, "0.1.5")
     }
 }

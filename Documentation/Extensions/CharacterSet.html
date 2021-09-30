@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Getopter Class Reference</title>
+    <title>CharacterSet Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Getopter" class="dashAnchor"></a>
-    <a title="Getopter Class Reference"></a>
+    <a name="//apple_ref/swift/Extension/CharacterSet" class="dashAnchor"></a>
+    <a title="CharacterSet Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Ish West Swift Toolbox v. 0.1.5</a> (98% documented)</p>
@@ -30,7 +30,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Iwstb Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Getopter Class Reference
+        CharacterSet Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -95,18 +95,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Getopter</h1>
+            <h1>CharacterSet</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Getopter</span> <span class="p">:</span> <span class="kt">Sequence</span><span class="p">,</span> <span class="kt">IteratorProtocol</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">CharacterSet</span></code></pre>
 
                 </div>
               </div>
-            <p>Convinience wrapper for the C getopt</p>
-
-<p>Please see <code>cookGetopter</code> in <code><a href="../Classes/Iwstb.html">Iwstb</a></code> for more docs.</p>
-
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -114,9 +111,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5Iwstb8GetopterC6ResultV"></a>
-                    <a name="//apple_ref/swift/Struct/Result" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Iwstb8GetopterC6ResultV">Result</a>
+                    <a name="/s:10Foundation12CharacterSetV5IwstbE8portableACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/portable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation12CharacterSetV5IwstbE8portableACvpZ">portable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -124,71 +121,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Data structure describing a command line option detected by getopt.</p>
-
-                        <a href="../Classes/Getopter/Result.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Result</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:St4next7ElementQzSgyF"></a>
-                    <a name="//apple_ref/swift/Method/next()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:St4next7ElementQzSgyF">next()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">next</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/Getopter/Result.html">Result</a></span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Iwstb8GetopterC9remainingSaySSGSgvp"></a>
-                    <a name="//apple_ref/swift/Property/remaining" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Iwstb8GetopterC9remainingSaySSGSgvp">remaining</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Remaining command line arguments</p>
-
-<p>Returns all the command line arguments positioned after detected command line options. Or <code>nil</code>
-if none remain.</p>
+                        <p>Portable Character Set as specified by the Open Group:
+<a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap06.html">https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap06.html</a></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">remaining</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">static</span> <span class="k">var</span> <span class="nv">portable</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

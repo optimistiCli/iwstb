@@ -6,8 +6,7 @@ import Foundation
  A random collection of handy tools.
  */
 public class Iwstb {
-    let version = "0.1.2"
-
+    let version = "0.1.5"
 
     // MARK: Program
 
@@ -169,7 +168,7 @@ public class Iwstb {
     }
 
 
-    // MARK: Error reporting, warnings, logging
+    // MARK: Reporting errors / warnings, logging
 
     /**
      Prints something to STDERR.
@@ -227,7 +226,7 @@ public class Iwstb {
      ~~~
 
      - Parameters:
-       - aReason: An error message. If the passed value conforms to IwstbError
+       - aReason: An error message. If the passed value conforms to AugmentableError
                   protocol then it's `reason` property is printed. If ommited
                   a generic placeholder is used.
        - exitCode: Program exit code to be passed to `exit(_:)` call.
@@ -235,7 +234,7 @@ public class Iwstb {
 
      - Returns: An exit code to be passed to `exit(_:)` call.
      */
-    public static func brag(
+    @discardableResult public static func brag(
             _ aReason: Any? = nil,
             exitCode aExitCode: Int32 = 1
             ) -> Int32 {
@@ -243,7 +242,7 @@ public class Iwstb {
             guard let reason = aReason else {
                 return _errorMessagePlaceholder
             }
-            return (reason as? IwstbError)?.reason ?? "\(reason)"
+            return (reason as? AugmentableError)?.reason ?? "\(reason)"
         }()
         log("Error:\n  \(msg)\n\n\(usage)")
         return aExitCode
@@ -253,10 +252,42 @@ public class Iwstb {
      Prints a warning to STDERR.
 
      - Parameters:
-       - aMessage: A warning message. If ommited a generic placeholder is used.
+       - aMessage: A warning message.
      */
-    public static func moan(_ aMessage: String? = nil) {
-        log("Warning: \(aMessage ?? _warninMessagePlaceholder)")
+    public static func moan(message aMessage: String) {
+        log("Warning: \(aMessage)")
+    }
+
+    /**
+     Prints a warning to STDERR.
+
+     - Parameters:
+       - aError: An AugmentableError that caused the warning
+     */
+    public static func moan(reason aError: AugmentableError) {
+        log("Warning: \(aError.reason)")
+    }
+
+    /**
+     Prints a warning to STDERR.
+
+     - Parameters:
+       - aReason: A reason for the warning. If ommited a generic placeholder is used.
+     */
+    public static func moan(_ aReason: Any? = nil) {
+        guard let reason = aReason else {
+            return moan(message: _warninMessagePlaceholder)
+        }
+        if let str = reason as? String {
+            return moan(message: str)
+        }
+        if let error = reason as? AugmentableError {
+            return moan(reason: error)
+        }
+        if let describable = reason as? CustomStringConvertible {
+            return moan(message: String(describing: describable))
+        }
+        moan(message: "\(reason)")
     }
 
 
@@ -274,13 +305,19 @@ public class Iwstb {
 
      - Throws: Lets thru whatever `Process.run` throws.
      */
-    public static func run(
+    @discardableResult public static func run(
             _ aExecutableFileUrl: URL,
-            arguments aArguments: [String]? = nil
+            arguments aArguments: [String]? = nil,
+            environment aEnvironment: [String:String]? = nil
             ) throws -> Int32 {
         let p = Process()
         p.executableURL = aExecutableFileUrl
-        p.arguments = aArguments
+        if aArguments != nil {
+            p.arguments = aArguments
+        }
+        if aEnvironment != nil {
+            p.environment = aEnvironment
+        }
         try p.run()
         p.waitUntilExit()
         return p.terminationStatus
@@ -394,4 +431,15 @@ public class Iwstb {
             return nil
         }
     }
+
+    // MARK: CharacterSet
+
+    /**
+     * See `portable` in `CharacterSet`
+     */
+    public static let portableCharacterSet: CharacterSet =
+        CharacterSet([Unicode.Scalar(0x0000)]).union(
+        CharacterSet(charactersIn: Unicode.Scalar(0x0007)...Unicode.Scalar(0x000D)).union(
+        CharacterSet(charactersIn: Unicode.Scalar(0x0020)...Unicode.Scalar(0x007E))
+        ))
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Chompable Protocol Reference</title>
+    <title>String Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,11 +13,11 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/Chompable" class="dashAnchor"></a>
-    <a title="Chompable Protocol Reference"></a>
+    <a name="//apple_ref/swift/Extension/String" class="dashAnchor"></a>
+    <a title="String Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Ish West Swift Toolbox v. 0.1.2</a> (94% documented)</p>
+        <p><a href="../index.html">Ish West Swift Toolbox v. 0.1.5</a> (98% documented)</p>
         <p class="header-right"><a href="https://github.com/optimistiCli/iwstb"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right">
           <form role="search" action="../search.json">
@@ -30,7 +30,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Iwstb Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Chompable Protocol Reference
+        String Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -49,7 +49,7 @@
                 <a href="../Classes/Iwstb.html">Iwstb</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Iwstb/Error.html">– Error</a>
+                <a href="../Classes/IwstbError.html">IwstbError</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/LineReader.html">LineReader</a>
@@ -66,13 +66,19 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions.html#/s:SS">String</a>
+                <a href="../Extensions/CharacterSet.html">CharacterSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/FileManager.html">FileManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/StringProtocol.html">StringProtocol</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions.html#/s:Ss">Substring</a>
+                <a href="../Extensions/URL.html">URL</a>
               </li>
             </ul>
           </li>
@@ -80,10 +86,7 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Protocols/Chompable.html">Chompable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/IwstbError.html">IwstbError</a>
+                <a href="../Protocols/AugmentableError.html">AugmentableError</a>
               </li>
             </ul>
           </li>
@@ -92,15 +95,32 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Chompable</h1>
+            <h1>String</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Chompable</span> <span class="p">:</span> <span class="kt">StringProtocol</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">String</span></code></pre>
 
                 </div>
               </div>
-            <p>A regrettable implementation artefact</p>
+            <p>Helpers for dealing with environment variables. Lagerly based on this answer:
+ <a href="https://stackoverflow.com/a/2821183/5272636">https://stackoverflow.com/a/2821183/5272636</a></p>
+
+<blockquote>
+<p>… names shall not contain the character &lsquo;=&rsquo;. For values to be portable across systems conforming to
+POSIX.1-2017, the value shall be composed of characters from the portable character set (except NUL
+and as indicated below)
+…
+Environment variable names used by the utilities in the Shell and Utilities volume of POSIX.1-2017
+consist solely of uppercase letters, digits, and the <underscore> ( &lsquo;_&rsquo; ) from the characters defined
+in Portable Character Set and do not begin with a digit. Other characters may be permitted by an
+implementation; applications shall tolerate the presence of such names. Uppercase and lowercase
+letters shall retain their unique identities and shall not be folded together.
+…
+Note: Other applications may have difficulty dealing with environment variable names that start with a
+digit. For this reason, use of such names is not recommended anywhere.
+ Source: <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html">https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html</a></p>
+</blockquote>
 
           </section>
           <section class="section task-group-section">
@@ -109,34 +129,24 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5Iwstb9ChompableP15chompedTrailingSsSgvp"></a>
-                    <a name="//apple_ref/swift/Property/chompedTrailing" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Iwstb9ChompableP15chompedTrailingSsSgvp">chompedTrailing</a>
+                    <a name="/s:SS5IwstbE38isStrictlyValidEnvironmentVariableNameSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isStrictlyValidEnvironmentVariableName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SS5IwstbE38isStrictlyValidEnvironmentVariableNameSbvp">isStrictlyValidEnvironmentVariableName</a>
                     </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Substring without any trailing whitespaces as in
-<a href="apple-reference-documentation://ls%2Fdocumentation%2Ffoundation%2Fnscharacterset%2F1413732-whitespacesandnewlines">NSCharacterSet.whitespacesAndNewlines</a>
-or nil if the String or Substring is empty or consists only of whitespaces.</p>
+                        <p>The rule Open Group&rsquo;s own software adhere to when setting environment variables.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">chompedTrailing</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isStrictlyValidEnvironmentVariableName</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -146,34 +156,24 @@ or nil if the String or Substring is empty or consists only of whitespaces.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5Iwstb9ChompableP14chompedLeadingSsSgvp"></a>
-                    <a name="//apple_ref/swift/Property/chompedLeading" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Iwstb9ChompableP14chompedLeadingSsSgvp">chompedLeading</a>
+                    <a name="/s:SS5IwstbE30isValidEnvironmentVariableNameSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isValidEnvironmentVariableName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SS5IwstbE30isValidEnvironmentVariableNameSbvp">isValidEnvironmentVariableName</a>
                     </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Substring without any leading whitespaces as in
-<a href="apple-reference-documentation://ls%2Fdocumentation%2Ffoundation%2Fnscharacterset%2F1413732-whitespacesandnewlines">NSCharacterSet.whitespacesAndNewlines</a>
-or nil if the String or Substring is empty or consists only of whitespaces.</p>
+                        <p>Most commonly used rule for environment variable naming</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">chompedLeading</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isValidEnvironmentVariableName</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -183,34 +183,24 @@ or nil if the String or Substring is empty or consists only of whitespaces.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5Iwstb9ChompableP11chompedBothSsSgvp"></a>
-                    <a name="//apple_ref/swift/Property/chompedBoth" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Iwstb9ChompableP11chompedBothSsSgvp">chompedBoth</a>
+                    <a name="/s:SS5IwstbE32isAllowedEnvironmentVariableNameSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAllowedEnvironmentVariableName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SS5IwstbE32isAllowedEnvironmentVariableNameSbvp">isAllowedEnvironmentVariableName</a>
                     </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Substring without any leading or trailing whitespaces as in
-<a href="apple-reference-documentation://ls%2Fdocumentation%2Ffoundation%2Fnscharacterset%2F1413732-whitespacesandnewlines">NSCharacterSet.whitespacesAndNewlines</a>
-or nil if the String or Substring is empty or consists only of whitespaces.</p>
+                        <p>The most permissive rule for environment variable naming. Will let thru names that can break stuff.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">chompedBoth</span><span class="p">:</span> <span class="kt">Substring</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isAllowedEnvironmentVariableName</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -222,7 +212,7 @@ or nil if the String or Substring is empty or consists only of whitespaces.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/optimistiCli" target="_blank" rel="external">Ish West</a>. All rights reserved. (Last updated: 2021-05-11)</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/optimistiCli" target="_blank" rel="external">Ish West</a>. All rights reserved. (Last updated: 2021-09-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -17,7 +17,7 @@
     <a title="Extensions  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Ish West Swift Toolbox v. 0.1.2</a> (94% documented)</p>
+        <p><a href="index.html">Ish West Swift Toolbox v. 0.1.5</a> (98% documented)</p>
         <p class="header-right"><a href="https://github.com/optimistiCli/iwstb"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right">
           <form role="search" action="search.json">
@@ -49,7 +49,7 @@
                 <a href="Classes/Iwstb.html">Iwstb</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/Iwstb/Error.html">– Error</a>
+                <a href="Classes/IwstbError.html">IwstbError</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/LineReader.html">LineReader</a>
@@ -66,13 +66,19 @@
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Extensions.html#/s:SS">String</a>
+                <a href="Extensions/CharacterSet.html">CharacterSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/FileManager.html">FileManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/StringProtocol.html">StringProtocol</a>
               </li>
               <li class="nav-group-task">
-                <a href="Extensions.html#/s:Ss">Substring</a>
+                <a href="Extensions/URL.html">URL</a>
               </li>
             </ul>
           </li>
@@ -80,10 +86,7 @@
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Protocols/Chompable.html">Chompable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/IwstbError.html">IwstbError</a>
+                <a href="Protocols/AugmentableError.html">AugmentableError</a>
               </li>
             </ul>
           </li>
@@ -99,6 +102,60 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation12CharacterSetV"></a>
+                    <a name="//apple_ref/swift/Extension/CharacterSet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation12CharacterSetV">CharacterSet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/CharacterSet.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">CharacterSet</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NSFileManager"></a>
+                    <a name="//apple_ref/swift/Extension/FileManager" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NSFileManager">FileManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="Extensions/FileManager.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">FileManager</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -131,11 +188,11 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Implementation%20artifacts"></a>
-                <a name="//apple_ref/swift/Section/Implementation artifacts" class="dashAnchor"></a>
+                <a name="/Environment%20Variable%20Names"></a>
+                <a name="//apple_ref/swift/Section/Environment Variable Names" class="dashAnchor"></a>
                 <div class="section-name-container">
-                  <a class="section-name-link" href="#/Implementation%20artifacts"></a>
-                  <h3 class="section-name"><p>Implementation artifacts</p>
+                  <a class="section-name-link" href="#/Environment%20Variable%20Names"></a>
+                  <h3 class="section-name"><p>Environment Variable Names</p>
 </h3>
                 </div>
               </div>
@@ -153,14 +210,32 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A regrettable implementation artefact</p>
+                        <p>Helpers for dealing with environment variables. Lagerly based on this answer:
+ <a href="https://stackoverflow.com/a/2821183/5272636">https://stackoverflow.com/a/2821183/5272636</a></p>
 
+<blockquote>
+<p>… names shall not contain the character &lsquo;=&rsquo;. For values to be portable across systems conforming to
+POSIX.1-2017, the value shall be composed of characters from the portable character set (except NUL
+and as indicated below)
+…
+Environment variable names used by the utilities in the Shell and Utilities volume of POSIX.1-2017
+consist solely of uppercase letters, digits, and the <underscore> ( &lsquo;_&rsquo; ) from the characters defined
+in Portable Character Set and do not begin with a digit. Other characters may be permitted by an
+implementation; applications shall tolerate the presence of such names. Uppercase and lowercase
+letters shall retain their unique identities and shall not be folded together.
+…
+Note: Other applications may have difficulty dealing with environment variable names that start with a
+digit. For this reason, use of such names is not recommended anywhere.
+ Source: <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html">https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html</a></p>
+</blockquote>
+
+                        <a href="Extensions/String.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">String</span><span class="p">:</span> <span class="kt"><a href="Protocols/Chompable.html">Chompable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -170,9 +245,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:Ss"></a>
-                    <a name="//apple_ref/swift/Extension/Substring" class="dashAnchor"></a>
-                    <a class="token" href="#/s:Ss">Substring</a>
+                    <a name="/s:10Foundation3URLV"></a>
+                    <a name="//apple_ref/swift/Extension/URL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV">URL</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -180,14 +255,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A regrettable implementation artefact</p>
-
+                        
+                        <a href="Extensions/URL.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Substring</span><span class="p">:</span> <span class="kt"><a href="Protocols/Chompable.html">Chompable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">URL</span></code></pre>
 
                         </div>
                       </div>
@@ -199,7 +274,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/optimistiCli" target="_blank" rel="external">Ish West</a>. All rights reserved. (Last updated: 2021-05-11)</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/optimistiCli" target="_blank" rel="external">Ish West</a>. All rights reserved. (Last updated: 2021-09-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

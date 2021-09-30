@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>URL Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/URL" class="dashAnchor"></a>
+    <a title="URL Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Ish West Swift Toolbox v. 0.1.5</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/optimistiCli/iwstb"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Iwstb Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        URL Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Getopter.html">Getopter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Getopter/Result.html">– Result</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Iwstb.html">Iwstb</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IwstbError.html">IwstbError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LineReader.html">LineReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LineReader/Chomp.html">– Chomp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Regexer.html">Regexer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CharacterSet.html">CharacterSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/FileManager.html">FileManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/StringProtocol.html">StringProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AugmentableError.html">AugmentableError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>URL</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">URL</span></code></pre>
+
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV5IwstbE15cookUrlRelative2to22assumeMissingBaseIsDirACSgAC_SbSgtF"></a>
+                    <a name="//apple_ref/swift/Method/cookUrlRelative(to:assumeMissingBaseIsDir:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV5IwstbE15cookUrlRelative2to22assumeMissingBaseIsDirACSgAC_SbSgtF">cookUrlRelative(to:<wbr>assumeMissingBaseIsDir:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a file URL of a (possibly inexistant) object referenced by this URL relative to a (possibly inexistant)
+base URL. An inexistant base object is assumed to be a file rather then a directory unless specified
+otherwise by the optional <code>assumeMissingBaseIsDir</code> param.</p>
+
+<p>Intended use:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">htmlUrl</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/some/path/index.html"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">imageUrl</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/yet/another/path/picture.jpg"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">imgTag</span> <span class="o">=</span> <span class="s">"&lt;img src=</span><span class="se">\"\(</span><span class="n">imageUrl</span><span class="o">.</span><span class="nf">cookUrlRelative</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">htmlUrl</span><span class="p">)</span><span class="o">!.</span><span class="n">relativeString</span><span class="se">)\"</span><span class="s"> /&gt;"</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">cookUrlRelative</span><span class="p">(</span>
+        <span class="n">to</span> <span class="nv">aBaseUrl</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span>
+        <span class="n">assumeMissingBaseIsDir</span> <span class="nv">aAssumeDir</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>aBaseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A file URL to be used as a base for the relative URL being cooked here.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>assumeMissingBaseIsDir</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If true forces the <code>to</code> URL to be considered  a reference to a
+directory in case it doesn&rsquo;t (yet) exist in the FS. Otherwise inexistant base URL is cosidered
+a file.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new file URL object or nil if it couldn&rsquo;t been created.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV5IwstbE24normalizedPathComponentsSaySSGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/normalizedPathComponents" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV5IwstbE24normalizedPathComponentsSaySSGSgvp">normalizedPathComponents</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Similar to <code>pathComponents</code> but resolves all single and double dots in the path.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">normalizedPathComponents</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV5IwstbE25normalizingPathComponentsACSgyF"></a>
+                    <a name="//apple_ref/swift/Method/normalizingPathComponents()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV5IwstbE25normalizingPathComponentsACSgyF">normalizingPathComponents()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cretes new URL object referencing the same path in the FS but resolving all dots and double dots in the
+path.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">normalizingPathComponents</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new file URL object or nil if it couldn&rsquo;t been created.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV5IwstbE13cookParentUrlACSgyF"></a>
+                    <a name="//apple_ref/swift/Method/cookParentUrl()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV5IwstbE13cookParentUrlACSgyF">cookParentUrl()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Similar to <code>deletingLastPathComponent()</code> but respects the fact that FS root&rsquo;s parent is the FS
+root itself.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">cookParentUrl</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new file URL object or nil if it couldn&rsquo;t been created.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV5IwstbE5isDirSbSgvp"></a>
+                    <a name="//apple_ref/swift/Property/isDir" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV5IwstbE5isDirSbSgvp">isDir</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>True if URL references an FS directory or a symlink to a directory. False if any other file system object.
+Nil otherwise: for example if file doesn&rsquo;t exist, of if it is not a file URL etc.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isDir</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV5IwstbE28realyResolvingSymlinksInPathACSgyF"></a>
+                    <a name="//apple_ref/swift/Method/realyResolvingSymlinksInPath()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV5IwstbE28realyResolvingSymlinksInPathACSgyF">realyResolvingSymlinksInPath()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Similar to <code>resolvingSymlinksInPath</code> but also resolves <code>/etc</code> to <code>/private/etc</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">realyResolvingSymlinksInPath</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new file URL object or nil if it couldn&rsquo;t been created.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation3URLV5IwstbE8pathNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/pathName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation3URLV5IwstbE8pathNameSSvp">pathName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>In the spirit of <code>pathExtension</code> returns the name of file URL points to without extension.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">pathName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new <code>String</code> with file name.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://github.com/optimistiCli" target="_blank" rel="external">Ish West</a>. All rights reserved. (Last updated: 2021-09-30)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
